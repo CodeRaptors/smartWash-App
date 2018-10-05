@@ -32,6 +32,7 @@ class Home extends Component {
           </p>
           <h2> My laundry status </h2>
             <Status status={this.state.status}/>
+            
           </div>
         );
     }

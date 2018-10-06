@@ -1,16 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-// this is going to retrieve info from database,
-//indicating the status of the order
+class status extends Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+         title: this.props.defaultText
+      }
+      this.changeTitle = this.changeTitle.bind(this);
+   }
 
+   changeTitle() {
+      this.setState({
+          title: this.props.changedText
+      });
+   }
 
-//if orden en curso, render (conditional rendering)
-const Status = (props) => {
-  return (
-    <div>
-      <h2>Tu ropa está **{props.status}**</h2>
-   </div>
-  );
+   render() {
+       return <div onClick={this.changeTitle}>{this.state.title}</div>;
+   }
+
 }
 
-export default Status;
+status.defaultProps = {
+    defaultText: 'order has been picked up',
+    changedText: 'order has been droped off',
+     washed: 'your ropa is being washed'
+}
+export default status;

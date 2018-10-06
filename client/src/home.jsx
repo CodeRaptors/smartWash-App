@@ -31,7 +31,7 @@ class Home extends Component {
           <button onClick={this.logout}>Logout</button>
           </p>
           <h2> My laundry status </h2>
-            <h<Status status={this.state.status}/>
+            <Status status={this.state.status}/>
           </div>
         );
     }

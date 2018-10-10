@@ -1,21 +1,19 @@
 var mysql = require('mysql');
 
-var connection = mysql.createConection({
+const connection = mysql.createConnection({
   host   : 'localhost',
   user   :  'root',
   password  : 'password',
-  database  : 'smartWash-App'
+  database  : 'smartWash'
 });
 
-var orders = function(call back) {
-  connection.query('SELECT * FROM orders', function(err,results,fields){
+ exports.whatever = function(callback) {
+  connection.query('SELECT * FROM orders',(err,results,fields) => {
     if(err){
       callback(err, null);
     }else{
       callback(null, results);
-
     }
   });
 };
-
-module.exports.orders = orders;
+//module.exports = whatever;

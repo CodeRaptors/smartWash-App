@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Auth from './Auth.jsx';
 import Navigation from "./components/Navigation.jsx";
-import Example from "./components/calendar.jsx"
+import Example from "./components/calendar.jsx";
+import axios from "axios";
+import Pay from "./components/pay.js";
 // import Calendar from "./components/calendar.jsx";
 
 class App extends React.Component {
@@ -15,6 +17,15 @@ class App extends React.Component {
   }
 
 
+  //testing DATABASE
+  componentDidMount(){
+    axios.get('/orders')
+    .then(res => {
+      console.log("hello world");
+    })
+  }
+
+
   render () {
     return (
       <BrowserRouter>
@@ -23,6 +34,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Auth} />
             <Route path="/cita" component={Example} />
+            <Route path="/pago" component={Pay} />
           </Switch>
 
         </div>

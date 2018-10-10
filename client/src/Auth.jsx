@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import fire from "./components/fire.jsx";
 import Login from "./components/Login.jsx";
+import SignUp from "./components/signUp.jsx"
 import App from './index.jsx';
-import Home from './home.jsx';
+import Home from './userHome.jsx';
 // import Login from './Login';
 
 
 class Auth extends Component {
   constructor() {
     super();
-    this.state = ({
+    this.state = {
       user: null,
-    });
+      account: undefined
+    }
     this.authListener = this.authListener.bind(this);
   }
 
@@ -34,7 +36,8 @@ class Auth extends Component {
   render() {
     return (
      <div>
-     {this.state.user ?  ( <Home />) : (<Login />)}
+        <h1> SmartWash </h1>
+     {this.state.user ?  ( <Home user={this.state.user}/>) : (<Login />)}
      </div>
 )}
 }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import fire from './fire.jsx';
+import SignUp from './signUp.jsx';
+import ExistingLogIn from './ExistingLogIn.jsx';
 
 class Login extends Component {
   constructor(props) {
@@ -7,7 +9,10 @@ class Login extends Component {
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.signup = this.signup.bind(this);
+    this.hasAccount = this.hasAccount.bind(this);
+    this.noAccount = this.noAccount.bind(this);
     this.state = {
+      account: undefined,
       email: '',
       password: ''
     };
@@ -21,7 +26,7 @@ class Login extends Component {
     e.preventDefault();
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
     }).catch((error) => {
-        console.log(error);
+        alert("¡Contraseña o usuario incorrecto! Intenta nuevamente")
       });
   }
 
@@ -30,27 +35,36 @@ class Login extends Component {
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
     }).then((u)=>{console.log(u)})
     .catch((error) => {
-        console.log(error);
+        alert("Usuario creado")
       })
   }
+
+  hasAccount(){
+    console.log("has account");
+    this.setState({
+      account: true
+    })
+  }
+
+  noAccount(){
+    console.log("no account");
+    this.setState({
+      account: false
+    })
+  }
+
   render() {
     return (
-       <div className="col-md-6">
-       <form>
-      <div className="form-group">
-       <label htmlFor="exampleInputEmail1">Email address</label>
-       <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-       <small id="emailHelp" className="form-text text-muted"></small>
+      <div>
+       <button onClick={this.hasAccount}> ya tengo cuenta</button>
+       <button onClick={this.noAccount}> crear una cuenta nueva</button>
+        <div>
+        { this.state.account ?
+          < ExistingLogIn /> :
+          <SignUp />
+        }
+        </div>
       </div>
-       <div className="form-group">
-      <label htmlFor="exampleInputPassword1">Password</label>
-      <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-      </div>
-      <button type="submit" onClick={this.login} className="btn btn-primary">Sign in</button>
-      <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">Create account</button>
- </form>
-
- </div>
     );
   }
 }

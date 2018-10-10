@@ -14,6 +14,7 @@ const connection = mysql.createConnection({
     }else{
       callback(null, results);
     }
-  });
+  );
 };
-//module.exports = whatever;
+
+module.exports.insertUser = insertUser;

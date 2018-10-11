@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fire from './components/fire.jsx';
-import Status from './components/status.jsx'
+import StepProgressBar from './components/status.jsx'
 import { NavLink } from 'react-router-dom';
 
 
@@ -33,8 +33,9 @@ class Home extends Component {
             </p>
             <button><NavLink to="/cita">Ordena ahora</NavLink></button>
             <h2> My laundry status </h2>
-            <Status status={this.state.status}/>
-          </div>
+          <button><NavLink to="/ProgressBar">Order Status</NavLink></button>
+
+    </div>
 
 
         );

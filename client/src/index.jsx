@@ -2,15 +2,15 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import bootstrap from 'bootstrap';
+import * as firebase from "firebase";
+import Calendar from "./calendar.jsx";
+import Home from './userHome.jsx';
 import Auth from './Auth.jsx';
 import Navigation from "./components/Navigation.jsx";
 import About from "./components/about.jsx";
-import bootstrap from 'bootstrap';
-import Calendar from "./calendar.jsx";
-import PlaceOrder from './PlaceOrder.jsx';
-import userHome from './userHome.jsx';
-import Payment from './components/payment.jsx'
-// import Calendar from "./components/calendar.jsx";
+import Payment from './components/payment.jsx';
+import StepProgressBar from './components/status.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,7 +28,6 @@ class App extends React.Component {
           lat: location.coords.latitude,
           lon: location.coords.longitude
         })
-
       });
    }
 
@@ -41,11 +40,9 @@ class App extends React.Component {
             <Route exact path="/" component={About} />
             <Route path="/registro" component={Auth} />
             <Route path="/cita" component={Calendar} />
-            <Route path="/PlaceOrder" component={PlaceOrder} />
             <Route path="/pay" component={Payment} />
-
+          <Route path="/ProgressBar" component={StepProgressBar} />
           </Switch>
-
         </div>
       </BrowserRouter>
     )

@@ -15,7 +15,7 @@ class Time extends React.Component {
     return (
 
       <select >
-      <option value="time">9:00 a.m.</option>
+      <option value="time" type="return" slots="1">9:00 a.m.</option>
       <option value="time">9:30 a.m.</option>
       <option value="time">10:00 a.m.</option>
       <option value="time">10:30 a.m.</option>

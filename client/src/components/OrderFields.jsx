@@ -11,7 +11,7 @@ class OrderFields extends React.Component {
   render() {
     return (
       <div>
-      <label>Name</label>
+      <label>Name:</label>
       <input type="text"
              ref="name"
              defaultValue={ this.props.fieldValues.name } />

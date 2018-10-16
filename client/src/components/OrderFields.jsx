@@ -15,21 +15,18 @@ class OrderFields extends React.Component {
       <input type="text"
              ref="name"
              defaultValue={ this.props.fieldValues.name } />
-      <br></br>
-      <label>Address</label>
-      <input type="text"
+<br></br>
+      <label>Address:</label>
+        <input type="text"
              ref="Address"
              defaultValue={ this.props.fieldValues.Address } />
-      <br></br>
-      <label>PhoneNumber</label>
-      <input type="text"
+<br></br>
+      <label>PhoneNumber:</label>
+        <input type="text"
              ref="PhoneNumber"
              defaultValue={ this.props.fieldValues.PhoneNumber } />
-      <br></br>
-      <label>BagSize</label>
-      <input>
-        <select className="custom-select" ref="BagSize"
-        defaultValue={ this.props.fieldValues.BagSize }>
+<br></br>
+      <select className="custom-select">
         <option select = 'true'>Select BagSize</option>
         <option value="1">Small $53</option>
         <option value="2">Medium $62</option>
@@ -45,6 +42,8 @@ class OrderFields extends React.Component {
         <option value="2">Normal $60</option>
         <option value="3">Delayed $50</option>
       </select>
+<br></br>
+      <button onClick={ this.saveAndContinue }>Save and Continue</button>
       </div>
     )
   }

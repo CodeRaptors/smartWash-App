@@ -15,6 +15,7 @@ class OrderFields extends React.Component {
       <input type="text"
              ref="name"
              defaultValue={ this.props.fieldValues.name } />
+<<<<<<< HEAD
 <br></br>
       <label>Address:</label>
         <input type="text"
@@ -27,13 +28,43 @@ class OrderFields extends React.Component {
              defaultValue={ this.props.fieldValues.PhoneNumber } />
 <br></br>
       <select className="custom-select">
+=======
+      <br></br>
+      <label>Address</label>
+      <input type="text"
+             ref="Address"
+             defaultValue={ this.props.fieldValues.Address } />
+      <br></br>
+      <label>PhoneNumber</label>
+      <input type="text"
+             ref="PhoneNumber"
+             defaultValue={ this.props.fieldValues.PhoneNumber } />
+      <br></br>
+      <label>BagSize</label>
+      <input>
+        <select className="custom-select" ref="BagSize"
+        defaultValue={ this.props.fieldValues.BagSize }>
+>>>>>>> staus almost working
         <option select = 'true'>Select BagSize</option>
-        <option value="1">Small $25</option>
-        <option value="2">Medium $34</option>
-        <option value="3">Large $43</option>
+        <option value="1">Small $53</option>
+        <option value="2">Medium $62</option>
+        <option value="3">Large $71</option>
+        </select>
+      </input>
+      <br></br>
+      <label>SelectService</label>
+    <select className="custom-select" ref="SelectService"
+        defaultValue={ this.props.fieldValues.SelectService } >
+        <option select = 'true'>SelectService</option>
+        <option value="1">Express $80</option>
+        <option value="2">Normal $60</option>
+        <option value="3">Delayed $50</option>
       </select>
+<<<<<<< HEAD
 <br></br>
       <button onClick={ this.saveAndContinue }>Save and Continue</button>
+=======
+>>>>>>> staus almost working
       </div>
     )
   }
@@ -46,7 +77,7 @@ class OrderFields extends React.Component {
       name     : this.refs.name.getDOMNode().value,
       Address : this.refs.Address.getDOMNode().value,
       PhoneNumber    : this.refs.PhoneNumber.getDOMNode().value,
-      //BagSize : this.refs.BagSize.getDOMNode().value,
+      BagSize : this.refs.BagSize.getDOMNode().value,
     }
 
     this.props.saveValues(data)

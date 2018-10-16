@@ -7,7 +7,7 @@
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js"
   },
-  "author": "Beth Johnson",
+  "author": "CodeRaptors",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -17,7 +17,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "@material-ui/core": "^3.2.0",
+    "react-step-progress-bar": "^1.0.3",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-alpha.6",
     "express": "^4.15.0",

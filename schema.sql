@@ -6,35 +6,31 @@ USE smartWash;
 
 CREATE TABLE orders(
   id int NOT NULL AUTO_INCREMENT,
-  user varchar(100) NOT NULL,
+  name varchar(100) NOT NULL,
+  phone int(100) NOT NULL,
   address varchar(100) NOT NULL,
-<<<<<<< HEAD
-  email varchar(50) NOT NULL PRIMARY KEY,
-  phone varchar(10) NOT NUL
-
-=======
   email varchar(50) NOT NULL,
   phone varchar(10) NOT NULL,
   pickup varchar(10) NOT NULL,
+
+  size varchar(100) NOT NULL,
+  specialInd varchar(100) NOT NULL,
+  service varchar(100) NOT NULL,
+  userId int(2) NOT NULL,
   PRIMARY KEY (ID)
->>>>>>> master
+
 );
 
+INSERT INTO orders (name, phone, adress, size, specialInd, service, userId )
+VALUES ("Fatima", 13151345, "calle 2 no 3", "mediano", "suavitel", "lavado y planchado", 2);
 
 
 CREATE TABLE status(
   id int NOT NULL AUTO_INCREMENT,
-<<<<<<< HEAD
   email varchar (50) NOT NULL,
   userName varchar (50) NOT NULL,
   PRIMARY KEY (ID),
   FOREIGN KEY (email) REFERENCES email(email)
-=======
-  email varchar(50) NOT NULL,
-  userName varchar(50) NOT NULL,
-  PRIMARY KEY (ID)
-);
->>>>>>> master
 
 );
 
@@ -42,8 +38,7 @@ CREATE TABLE status(
  *    mysql -u root < schema.sql
  *  to create the database and the tables.*/
 
-<<<<<<< HEAD
+
 INSERT INTO orders  (name, lastname, address, email, phone) VALUES("John", "Lopez", "77 toledo", "jolo@gmail.com", "5573589699");
-=======
- INSERT INTO users (email, userName) VALUES ("jazzcelaya@gmail.com", "Jazz");
->>>>>>> master
+
+ INSERT INTO users (email, userName) VALUES ("anastasio@lelelele.lo", "Anastasio");

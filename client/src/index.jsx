@@ -17,8 +17,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       list: [],
-      lat: null,
-      lon: null
+      lat: '',
+      lon: ''
     }
   }
 
@@ -33,13 +33,7 @@ class App extends React.Component {
    }
 
   //testing DATABASE
-  componentDidMount(){
-    axios.get('/orders')
-    .then(res => {
-      console.log("hello world");
-    })
-  }
-
+  
 
   render () {
     return (

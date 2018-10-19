@@ -10,13 +10,13 @@ class About extends React.Component {
   render () {
     return (
       <div>
-      <h1>Picked up dirty. Delivered fresh & folded.</h1>
+      <h1>Recogida sucia. Entregada Fresca y Doblada.</h1>
       <img className="pic" src="steps.jpg"/>
-    <h1>SmartWash door-to-door laundry service is one of the best ways to save
-    time and money. Your laundry will be picked up and delivered, all
-    fresh and folded. We take care of your laundry so you can spend
-    your time where and when you want.
-    Laundry Time shouldn't interrupt your Fun Time!</h1>
+    <h1>El servicio de lavandería a Domicilio SmartWash es una de las mejores maneras de ahorrar
+    tiempo y dinero. Su ropa será recogida y entregada, toda
+    Fresca y Doblada. Cuidamos su ropa para que pueda pasar
+    Su tiempo donde y cuando quiera.
+    El tiempo de lavandería no debe interrumpir su tiempo de diversión!</h1>
 
     </div>
     )

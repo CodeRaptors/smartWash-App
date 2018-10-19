@@ -1,9 +1,9 @@
 
 body {
-  background-color: #cdf4ee;
+  background-color: #F8F8FF;
   /* background-color: #7bd0d8; */
   background-repeat: no-repeat;
-  background-image: url(washer.jpg);
+  background-image: url();
   background-size: cover;
 
   }
@@ -21,6 +21,56 @@ body {
     -o-background-size: cover;
     background-size: cover;
   } */
+
+
+
+  * {
+      padding:0;
+      margin:0;
+  }
+
+  html{
+      font:14px normal Arial, sans-serif;
+      color:#626771;
+      background-color:#fff;
+  }
+
+  body{
+      padding:60px;
+      text-align: center;
+  }
+
+  ul{
+      list-style:none;
+      display: inline-block;
+  }
+
+  ul li{
+      display: inline-block;
+      padding: 10px 20px;
+      cursor:pointer;
+      background-color:#eee;
+      color:#7B8585;
+
+      transition:0.3s;
+  }
+
+  ul li:hover{
+      background-color:#beecea;
+  }
+
+  ul li.focused{
+      color:#fff;
+      background-color:#41c7c2;
+  }
+
+  p{
+      padding-top:15px;
+      font-size:12px;
+  }
+
+
+
 
   h2{
   color: Black;
@@ -47,9 +97,9 @@ body {
 }
 h1 {
     font-size: 1.5em;
-    color: white;
+    color: black;
 }
-p.oblique {
+p.oblique
     font-style: oblique;
 }
 

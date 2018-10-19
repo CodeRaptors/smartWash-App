@@ -10,16 +10,25 @@ class Navigation extends React.Component {
 
 render(){
   return (
-    <div>
+    <div class="topnav">
     <nav className="headerStyle">
           <ul>
-          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/' class="active" href="#home">Home</NavLink>
           <NavLink to='/registro'>Mi cuenta</NavLink>
+          <NavLink to='/registro'>Contacto</NavLink>
+          <NavLink to='/registro'>Sobre</NavLink>
           </ul>
     </nav>
     </div>
+
   )
 }
 }
 
 export default Navigation;
+
+/*<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">Mi Cuenta</a>
+
+</div>*/

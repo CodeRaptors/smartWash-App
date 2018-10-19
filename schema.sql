@@ -21,11 +21,16 @@ CREATE TABLE orders(
 
 );
 
-INSERT INTO orders (name, phone, adress, size, specialInd, service, userId )
+INSERT INTO orders (name, phone, address, size, specialInd, service, userId )
 VALUES ("Fatima", 13151345, "calle 2 no 3", "mediano", "suavitel", "lavado y planchado", 2);
 
+CREATE TABLE schedule(
+  id int NOT NULL AUTO_INCREMENT,
+  times varchar(50) NOT NULL,
+  PRIMARY KEY (ID)
+);
 
-CREATE TABLE status(
+CREATE TABLE users(
   id int NOT NULL AUTO_INCREMENT,
   email varchar (50) NOT NULL,
   userName varchar (50) NOT NULL,

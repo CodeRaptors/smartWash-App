@@ -15,8 +15,8 @@ render(){
           <ul>
           <NavLink to='/' class="active" href="#home">Home</NavLink>
           <NavLink to='/registro'>Mi cuenta</NavLink>
-          <NavLink to='/registro'>Contacto</NavLink>
-          <NavLink to='/registro'>Sobre</NavLink>
+          <NavLink to='/'>Contacto</NavLink>
+          <NavLink to='/'>Sobre</NavLink>
           </ul>
     </nav>
     </div>

@@ -8,9 +8,14 @@ import React from 'react';
 const Status = (props) => {
  return (
    <div>
-     <h2>Tu ropa está **{props.status}**</h2>
+     <h2>Tu ropa está *esperando este componente**</h2>
   </div>
  );
 }
 
 export default Status;
+
+// ACCOUNT SID
+// AC37dd6729b9f94bd7c5e3c3acff3b722a
+// AUTH TOKEN
+// 84591b86dec6afd2dc8958bd751bb3f2

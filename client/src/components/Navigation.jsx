@@ -2,29 +2,30 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Navigation extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-      }
-    }
 
-render(){
-  return (
-    <div className="topnav">
-    <nav className="headerStyle">
-          <ul>
-          <Link to='/' class="active" href="#home">Home</Link>
-          <Link to='/registro'>Mi cuenta</Link>
-          <Link to='/Aboutus'>Quienes Somos?</Link>
-          <Link to='/Contacto'>Contacto</Link>
-          </ul>
-    </nav>
-    </div>
-
-
-
-  )
-}
+render () {
+    return (
+      <div>
+      <nav className="navbar is-info">
+      <div className="container">
+      <div className="navbar-brand">
+      <a className="navbar-item" href="/">Smart Wash </a>
+      <span className="navbar-burger burger" data-target="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+      </span>
+      </div>
+      <div id="navbar-end" className="navbar-menu">
+      <div className="navbar-item">
+      <Link to="/registro" className="order" className="navbar-item" className="text-white">Order</Link>
+      </div>
+      </div>
+      </div>
+      </nav>
+      </div>
+    )
+  }
 }
 
 export default Navigation;
@@ -34,3 +35,21 @@ export default Navigation;
   <a href="#news">Mi Cuenta</a>
 
 </div>*/
+
+
+//
+// <div className="topnav">
+// <nav className="headerStyle">
+//       <ul>
+//       <Link to='/' class="active" href="#home">Home</Link>
+//       <Link to='/registro'>Mi cuenta</Link>
+//       <Link to='/Aboutus'>Quienes Somos?</Link>
+//       <Link to='/Contacto'>Contacto</Link>
+//       </ul>
+// </nav>
+// </div>
+//
+//
+//
+// )
+// }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Navigation extends React.Component {
     constructor(props) {
@@ -10,16 +10,18 @@ class Navigation extends React.Component {
 
 render(){
   return (
-    <div class="topnav">
+    <div className="topnav">
     <nav className="headerStyle">
           <ul>
-          <NavLink to='/' class="active" href="#home">Home</NavLink>
-          <NavLink to='/registro'>Mi cuenta</NavLink>
-          <NavLink to='/'>Contacto</NavLink>
-          <NavLink to='/'>Sobre</NavLink>
+          <Link to='/' class="active" href="#home">Home</Link>
+          <Link to='/registro'>Mi cuenta</Link>
+          <Link to='/Aboutus'>Quienes Somos?</Link>
+          <Link to='/Contacto'>Contacto</Link>
           </ul>
     </nav>
     </div>
+
+
 
   )
 }

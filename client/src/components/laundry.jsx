@@ -9,7 +9,12 @@ class Laundry extends React.Component {
 
   render () {
     return (
-      <h1> My SmartWash </h1>
+      <div>
+      <h1> SmartWash </h1>
+      <h1>Recogida sucia. Entregada Fresca y Doblada.</h1>
+      <img className="img0" src="washer.jpg"/>
+      </div>
+
     )
   }
 }

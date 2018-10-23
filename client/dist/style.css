@@ -140,3 +140,57 @@ p.oblique
 .form{
   background-color: blue;
 }
+
+
+.img {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+.img2 {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+.img3 {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+
+.img0 {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+
+/* .text1 {
+
+  color: ;
+  text-decoration: none;
+  font-size: 17px;
+} */

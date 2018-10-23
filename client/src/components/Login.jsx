@@ -85,8 +85,8 @@ class Login extends Component {
   render() {
     return (
       <div>
-       <button onClick={this.hasAccount}> ya tengo cuenta</button>
-       <button onClick={this.noAccount}> crear una cuenta nueva</button>
+       <button onClick={this.hasAccount}> Tengo cuenta SmartWash</button>
+       <button onClick={this.noAccount}> Crear cuenta SmartWash</button>
         <div>
         { this.state.account === undefined ?
           <p> ¿Tienes cuenta con Smart Wash?</p> :

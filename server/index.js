@@ -43,9 +43,9 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: 'smartwashapp23@gmail.com',
-  to: 'dcja2208@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'Test thing !'
+  to: 'eduardosaavedra1505@gmail.com',
+  subject: 'Order is ready',
+  text: 'Your order is ready you could call and have it delivered or you could pick it up until 6pm'
 };
 
 transporter.sendMail(mailOptions, function(error, info){

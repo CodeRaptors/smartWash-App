@@ -13,11 +13,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/users', function(req, res){
   let email = req.body.email;
   let userName = req.body.userName;
+  let phone = req.body.phone;
   console.log("hola desdel server");
   if(!email) {
     res.sendStatus(400);
   } else {
-    db.insertUser (email, userName, (err, results) => {
+    db.insertUser (email, userName, phone, (err, results) => {
       if (err) {
         res.status(500);
       } else {

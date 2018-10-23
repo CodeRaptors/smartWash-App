@@ -24,7 +24,7 @@ class App extends React.Component {
       lat: '',
       lon: '',
       userId: undefined,
-      userName: undefined,
+      userName: '',
       user: null,
       account: undefined,
       userOrders: undefined,
@@ -33,17 +33,15 @@ class App extends React.Component {
       size: '1-3 kg',
       specialInd: '',
       service: 'Laundry',
-      //we have 2 times wtf
-      time: '',
       dates: null,
-      times:'',
+      times:'9:00 a.m.',
+      total: 0,
     }
     this.getUserInfo = this.getUserInfo.bind(this);
     this.getUsersOrders = this.getUsersOrders.bind(this);
     this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addOrder = this.addOrder.bind(this);
-    //this.add = this.add.bind(this);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleTime = this.handleTime.bind(this);
 
@@ -155,22 +153,6 @@ class App extends React.Component {
     });
   }
 
-//this function resets the form component back to default values but
-//i dont think well use it anymore
-  // addOrder(event) {
-  //     event.preventDefault();
-  //     this.addOrder(this.state.name, this.state.phone, this.state.address, this.state.size, this.state.specialInd, this.state.service);
-  //     this.setState({
-  //       phone: '',
-  //       address: '',
-  //       size: '',
-  //       specialInd: '',
-  //       service: ''
-  //     })
-  //   }
-
-
-
 
   componentDidMount() {
       navigator.geolocation.getCurrentPosition(location => {
@@ -192,7 +174,7 @@ class App extends React.Component {
             <Route path="/" component={About} exact />
 
             <Route path="/checkout" render={(props) =>
-              <CheckOut {...props} state={this.state}/> } />
+              <CheckOut {...props} state={this.state} addOrder={this.addOrder}/> } />
 
             <Route path="/mis-ordenes" component={MisOrdenes} />
 

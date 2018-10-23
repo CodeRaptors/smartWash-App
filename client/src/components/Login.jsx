@@ -12,12 +12,13 @@ class Login extends Component {
     this.signup = this.signup.bind(this);
     this.hasAccount = this.hasAccount.bind(this);
     this.noAccount = this.noAccount.bind(this);
-    this.handleUserName = this.handleUserName.bind(this);
+    //this.handleUserName = this.handleUserName.bind(this);
     this.state = {
       account: undefined,
       email: '',
       password: '',
-      userName: ''
+      userName: '',
+      phone: '',
     };
   }
 
@@ -25,12 +26,12 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  handleUserName(e){
-    e.preventDefault();
-    this.setState({
-      userName: e.target.value
-    });
-  }
+  // handleUserName(e){
+  //   e.preventDefault();
+  //   this.setState({
+  //     userName: e.target.value
+  //   });
+  // }
 
   login(e) {
     e.preventDefault();
@@ -40,7 +41,7 @@ class Login extends Component {
       });
   }
 
-  createUser(email, userName){
+  createUser(email, userName, phone){
     $.ajax({
    url:'/users',
    type: "POST",
@@ -48,6 +49,7 @@ class Login extends Component {
    data: JSON.stringify({
      email: email,
      userName: userName,
+     phone: phone,
    }),
    success:(data)=> {
      console.log("you peel me")
@@ -60,7 +62,7 @@ class Login extends Component {
 
   signup(e){
     e.preventDefault();
-    this.createUser(this.state.email, this.state.userName);
+    this.createUser(this.state.email, this.state.userName, this.state.phone);
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
     }).then((u)=>{console.log(u)})
     .catch((error) => {

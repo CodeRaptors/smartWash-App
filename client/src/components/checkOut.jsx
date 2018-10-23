@@ -6,7 +6,10 @@ import Payment from './payment.jsx';
 const CheckOut = (props) => {
  return (
    <div>
-     <h2>forma recibo cosa*</h2>
+     <h2>Tu orden</h2>
+     <p>Recogeremos {this.props.state.size} de ropa</p>
+     <p>el día{this.props.state.dates} a las {this.props.state.times}.</p>
+     <p></p>
      <p>Total</p>
          <Payment />
   </div>

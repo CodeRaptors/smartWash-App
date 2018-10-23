@@ -8,11 +8,11 @@ const connection = mysql.createConnection({
 });
 
 // post new user to database
-const insertUser = function(email, userName, callback) {
+const insertUser = function(email, userName, phone, callback) {
   console.log("quiubo desde la db");
   connection.query(
-    'INSERT INTO users (email, userName) VALUES (?, ?)',
-    [email, userName],
+    'INSERT INTO users (email, userName, phone) VALUES (?, ?, ?)',
+    [email, userName, phone],
     (err, results, fields) => {
       if (err) {
         callback(err, null);

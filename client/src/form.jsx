@@ -67,11 +67,6 @@ class Form extends React.Component {
     <div>
 
       <form>
-        <span>Cellphone:</span>
-        <input type= 'text' name="phone"className="catInput radius form-control form-control-md" placeholder="Enter Number Cellphone:" value={this.props.state.phone} onChange={this.props.handleChange}></input>
-      </form>
-
-      <form>
         <span>Address:</span>
         <input type= 'text' name="address" className="catInput radius form-control form-control-md" placeholder="Enter Address:" value={this.props.state.address} onChange={this.props.handleChange}></input>
       </form>

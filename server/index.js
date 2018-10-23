@@ -6,6 +6,8 @@ var url = require('url');
 //var route = require("./Routes.js");
 var db = require('../database/data.js');
 var stripe = require("stripe")("pk_test_wd9rThkNdTfjOnS9RXQIFPv6");
+//var nodemailer for email notification
+var nodemailer = require('nodemailer');
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
@@ -27,6 +29,30 @@ app.post('/users', function(req, res){
         res.status(200).json(results);
       }
     });
+  }
+});
+
+//send email config
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'smartwashapp23@gmail.com',
+    pass: 'holacode2'
+  }
+});
+
+var mailOptions = {
+  from: 'smartwashapp23@gmail.com',
+  to: 'dcja2208@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'Test thing !'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
   }
 });
 

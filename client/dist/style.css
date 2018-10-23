@@ -1,67 +1,142 @@
 
 body {
-/*  background-color: #cdf4ee;*/
-   background-color: #7bd0d8;
-background-repeat: no-repeat;
-/*  background-image: url(washer.jpg);*/
-  background-size: cover;
+ background-color: #F8F8FF;
+ /* background-color: #7bd0d8; */
+ background-repeat: no-repeat;
+ background-image: url();
+ background-size: cover;
+ margin: 0;
+ font-family: Arial, Helvetica, sans-serif;
+ }
 
-  }
+ .topnav {
+   overflow: hidden;
+   background-color: #7AA9DD;
+ }
+
+ .topnav a {
+   float: left;
+   color: #626771;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+ }
+
+ .topnav a:hover {
+   background-color: #beecea;
+   color: black;
+ }
+
+ .topnav a.active {
+   background-color: blue;
+   color: #41c7c2;
+ }
 /*
-  body {
-    background:
-     url(washer.jpg) bottom center no-repeat,
+ body {
+   background:
+    url(washer.jpg) bottom center no-repeat,
 
-  } */
+ } */
+/*
+ html {
+   background: url(washer.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ } */
 
-  html {
-    background: url(washer.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
 
-  h2{
-  color: Black;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: honeydew;
-  color: seagreen;
+
+ * {
+     padding:0;
+     margin:0;
+ }
+
+ /*html{
+     font:14px normal Arial, sans-serif;
+     color:#626771;
+     background-color:#fff;
+ }*/
+
+ body{
+     padding:60px;
+     text-align: center;
+ }
+
+ ul{
+     list-style:none;
+     display: inline-block;
+ }
+
+ ul li{
+     display: inline-block;
+     padding: 10px 20px;
+     cursor:pointer;
+     background-color:#eee;
+     color:#7B8585;
+
+     transition:0.3s;
+ }
+
+ ul li:hover{
+     background-color:#beecea;
+ }
+
+ ul li.focused{
+     color:#fff;
+     background-color:#41c7c2;
+ }
+
+ p{
+     padding-top:15px;
+     font-size:12px;
+ }
+
+
+
+
+ h2{
+ color: Black;
+ font-family: Arial, Helvetica, sans-serif;
+ background-color: honeydew;
+ color: seagreen;
 }
 
 #main {
-  width: 50%;
-  margin: auto;
-  text-align: center;
+ width: 50%;
+ margin: auto;
+ text-align: center;
 }
 .about{
-  font-family: 'Comfortaa', cursive;
+ font-family: 'Comfortaa', cursive;
 }
 
 .pic {
-  width: 130%;
-  margin: auto;
-  text-align: center;
-  left: 100%;
-  margin-left: -59px;
+ width: 130%;
+ margin: auto;
+ text-align: center;
+ left: 100%;
+ margin-left: -59px;
 }
 h1 {
-    font-size: 1.5em;
-    color: white;
+   font-size: 1.5em;
+   color: black;
 }
-p.oblique {
-    font-style: oblique;
+p.oblique
+   font-style: oblique;
 }
 
 #icon{
-  width: 20px;
-  length: 20px;
+ width: 20px;
+ length: 20px;
 }
 
 .stripe-button{
-  margin-top: 20px;
+ margin-top: 20px;
 }
 
 .form{
-  background-color: blue;
+ background-color: blue;
 }

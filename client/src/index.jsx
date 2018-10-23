@@ -47,10 +47,12 @@ class App extends React.Component {
 
   }
 
+
   handleDayClick(day, { selected }) {
     this.setState({
       dates: selected ? undefined : day,
     });
+    console.log(typeof day);
   }
 
   handleTime(e) {

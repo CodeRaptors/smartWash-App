@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Navigation extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-     }
-   }
 
-render(){
- return (
-   <div class="topnav">
-   <nav className="headerStyle">
-         <ul>
-         <NavLink to='/' class="active" href="#home">Home</NavLink>
-         <NavLink to='/registro'>Mi cuenta</NavLink>
-         <NavLink to='/'>Contacto</NavLink>
-         <NavLink to='/'>Sobre</NavLink>
-         </ul>
-   </nav>
-   </div>
-
- )
-}
+render () {
+    return (
+      <div>
+      <nav className="navbar is-info">
+      <div className="container">
+      <div className="navbar-brand">
+      <a className="navbar-item" href="/">Smart Wash </a>
+      <span className="navbar-burger burger" data-target="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+      </span>
+      </div>
+      <div id="navbar-end" className="navbar-menu">
+      <div className="navbar-item">
+      <Link to="/registro" className="order" className="navbar-item" className="text-white">Order</Link>
+      </div>
+      </div>
+      </div>
+      </nav>
+      </div>
+    )
+  }
 }
 
 export default Navigation;

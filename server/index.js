@@ -3,7 +3,6 @@ var bodyParser = require('body-parser');
 var app = express();
 var path = require('path');
 var url = require('url');
-//var route = require("./Routes.js");
 var db = require('../database/data.js');
 var stripe = require("stripe")("pk_test_wd9rThkNdTfjOnS9RXQIFPv6");
 //var nodemailer for email notification
@@ -18,7 +17,6 @@ app.post('/users', function(req, res){
   let email = req.body.email;
   let userName = req.body.userName;
   console.log("hola desdel server");
-
   if(!email) {
     res.sendStatus(400);
   } else {
@@ -58,11 +56,10 @@ transporter.sendMail(mailOptions, function(error, info){
 
 app.post('/times', function(req, res){
   let times = req.body.times;
-
   if(!times) {
     res.sendStatus(400);
   } else {
-    database.insertTime (times, (err, results) => {
+    db.insertTime (times, (err, results) => {
       if (err) {
         res.status(500);
       } else {
@@ -79,11 +76,10 @@ app.post('/order', function(req, res){
   let size = req.body.size;
   let specialInd = req.body.specialInd;
   let service = req.body.service;
-
   if(!name) {
     res.sendStatus(400);
   } else {
-    database.insertOrder (name, phone, address, size, specialInd, service, (err, results) => {
+    db.insertOrder (name, phone, address, size, specialInd, service, (err, results) => {
       if (err) {
         res.status(500);
       } else {
@@ -95,7 +91,6 @@ app.post('/order', function(req, res){
 
 app.post('/api/stripe', function(req, res, next) {
   const stripeToken = req.body.stripeToken;
-
     stripe.charges.create({
   amount: 999,
   currency: 'usd',
@@ -116,8 +111,6 @@ app.post('/api/stripe', function(req, res, next) {
     }
   });
 });
-
-//app.get("user/:email",route.getResponse);
 
 app.get('/users', function (req, res) {
   db.selectUsers(function(err, data) {
@@ -140,18 +133,6 @@ app.get('/orders', function (req, res) {
     }
   });
 });
-
-//app.get('/user', function (req, res) {
-  // users.selectUser(email, function(err, data) {
-  //   if(err) {
-  //     console.log(err);
-  //     res.sendStatus(500);
-  //   } else {
-  //     console.log("get user request performed")
-  //     res.json(data);
-  //   }
-  // });
-// });
 
 app.listen(3000, function() {
   console.log('Server started and listening on port 3000');

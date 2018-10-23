@@ -16,13 +16,9 @@ CREATE TABLE orders(
   size varchar(100) NOT NULL,
   specialInd varchar(100) NOT NULL,
   service varchar(100) NOT NULL,
-  userId int(2) NOT NULL,
   PRIMARY KEY (ID)
 
 );
-
-INSERT INTO orders (name, phone, address, size, specialInd, service, userId )
-VALUES ("Fatima", 13151345, "calle 2 no 3", "mediano", "suavitel", "lavado y planchado", 2);
 
 CREATE TABLE schedule(
   id int NOT NULL AUTO_INCREMENT,

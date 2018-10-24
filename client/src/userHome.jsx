@@ -82,10 +82,10 @@ class Home extends Component {
         return (
           <div>
             <img src={"/clothes.png"} />
-            <p> Welcome, {this.props.state.userName}!
+            <p> Bienvenido SmartWasher, {this.props.state.userName}!
             <Button onClick={this.logout}>Logout</Button>
             <button><NavLink to='/MisOrdenes'>Mis órdenes</NavLink></button>
-            
+
             </p>
             <div>
             <button><NavLink to='/Form'>¡Ordena Ahora!</NavLink></button>
@@ -93,8 +93,6 @@ class Home extends Component {
             <h2> My laundry status </h2>
             <Status/>
           </div>
-
-
         );
     }
 }

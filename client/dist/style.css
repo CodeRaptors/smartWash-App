@@ -219,3 +219,26 @@ p.oblique
   margin-right: 27vw;
   color: yellow;
 }
+
+
+.line {
+    border: 1px solid powderblue;
+    padding: 30px;
+
+}
+
+
+.line1 {
+    border: 1px solid powderblue;
+    padding: 30px;
+    font-size: 19px;
+}
+
+
+.WApic {
+  width: 130%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -59px;
+}

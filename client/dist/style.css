@@ -35,11 +35,11 @@ body {
     color: #41c7c2;
   }
 /*
-  body {
-    background:
-     url(washer.jpg) bottom center no-repeat,
+ body {
+   background:
+    url(washer.jpg) bottom center no-repeat,
 
-  } */
+ } */
 /*
   html {
     background: url(washer.jpg) no-repeat center center fixed;
@@ -107,20 +107,20 @@ body {
 }
 
 #main {
-  width: 50%;
-  margin: auto;
-  text-align: center;
+ width: 50%;
+ margin: auto;
+ text-align: center;
 }
 .about{
-  font-family: 'Comfortaa', cursive;
+ font-family: 'Comfortaa', cursive;
 }
 
 .pic {
-  width: 130%;
-  margin: auto;
-  text-align: center;
-  left: 100%;
-  margin-left: -59px;
+ width: 130%;
+ margin: auto;
+ text-align: center;
+ left: 100%;
+ margin-left: -59px;
 }
 h1 {
     font-size: 1.5em;
@@ -131,16 +131,16 @@ p.oblique
 }
 
 #icon{
-  width: 20px;
-  length: 20px;
+ width: 20px;
+ length: 20px;
 }
 
 .stripe-button{
-  margin-top: 20px;
+ margin-top: 20px;
 }
 
 .form{
-  background-color: blue;
+ background-color: blue;
 }
 .img {
   width: 100%;

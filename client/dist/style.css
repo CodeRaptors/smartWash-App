@@ -1,37 +1,39 @@
 
 body {
- background-color: #F8F8FF;
- /* background-color: #7bd0d8; */
- background-repeat: no-repeat;
- background-image: url();
- background-size: cover;
- margin: 0;
- font-family: Arial, Helvetica, sans-serif;
- }
+  background-color: #F8F8FF;
+  /* background-color: #7bd0d8; */
+  background-repeat: no-repeat;
+  background-image: url();
+  background-size: cover;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  }
 
- .topnav {
-   overflow: hidden;
-   background-color: #7AA9DD;
- }
 
- .topnav a {
-   float: left;
-   color: #626771;
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
-   font-size: 17px;
- }
 
- .topnav a:hover {
-   background-color: #beecea;
-   color: black;
- }
+  .topnav {
+    overflow: hidden;
+    background-color: #7AA9DD;
+  }
 
- .topnav a.active {
-   background-color: blue;
-   color: #41c7c2;
- }
+  .topnav a {
+    float: left;
+    color: #626771;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #beecea;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: blue;
+    color: #41c7c2;
+  }
 /*
  body {
    background:
@@ -39,69 +41,69 @@ body {
 
  } */
 /*
- html {
-   background: url(washer.jpg) no-repeat center center fixed;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
- } */
+  html {
+    background: url(washer.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } */
 
 
 
- * {
-     padding:0;
-     margin:0;
- }
+  * {
+      padding:0;
+      margin:0;
+  }
 
- /*html{
-     font:14px normal Arial, sans-serif;
-     color:#626771;
-     background-color:#fff;
- }*/
+  html{
+      font:14px normal Arial, sans-serif;
+      color:#626771;
+      background-color:#fff;
+  }
 
- body{
-     padding:60px;
-     text-align: center;
- }
+  body{
+      padding:60px;
+      text-align: center;
+  }
 
- ul{
-     list-style:none;
-     display: inline-block;
- }
+  ul{
+      list-style:none;
+      display: inline-block;
+  }
 
- ul li{
-     display: inline-block;
-     padding: 10px 20px;
-     cursor:pointer;
-     background-color:#eee;
-     color:#7B8585;
+  ul li{
+      display: inline-block;
+      padding: 10px 20px;
+      cursor:pointer;
+      background-color:#eee;
+      color:#7B8585;
 
-     transition:0.3s;
- }
+      transition:0.3s;
+  }
 
- ul li:hover{
-     background-color:#beecea;
- }
+  ul li:hover{
+      background-color:#beecea;
+  }
 
- ul li.focused{
-     color:#fff;
-     background-color:#41c7c2;
- }
+  ul li.focused{
+      color:#fff;
+      background-color:#41c7c2;
+  }
 
- p{
-     padding-top:15px;
-     font-size:12px;
- }
-
-
+  p{
+      padding-top:15px;
+      font-size:12px;
+  }
 
 
- h2{
- color: Black;
- font-family: Arial, Helvetica, sans-serif;
- background-color: honeydew;
- color: seagreen;
+
+
+  h2{
+  color: Black;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: honeydew;
+  color: seagreen;
 }
 
 #main {
@@ -125,7 +127,7 @@ h1 {
     color: black;
 }
 p.oblique
-   font-style: oblique;
+    font-style: oblique;
 }
 
 #icon{
@@ -140,6 +142,58 @@ p.oblique
 .form{
  background-color: blue;
 }
+.img {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+.img2 {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+.img3 {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+
+.img0 {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -5px;
+  font-family: Arial;
+  color: blue;
+  font-size: 10px;
+}
+
+
+/* .text1 {
+
+  color: ;
+  text-decoration: none;
+  font-size: 17px;
+} */
 
 .footers{
   align-self: flex-end;
@@ -164,4 +218,27 @@ p.oblique
 .navbar-item{
   margin-right: 27vw;
   color: yellow;
+}
+
+
+.line {
+    border: 1px solid powderblue;
+    padding: 30px;
+
+}
+
+
+.line1 {
+    border: 1px solid powderblue;
+    padding: 30px;
+    font-size: 19px;
+}
+
+
+.WApic {
+  width: 130%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -59px;
 }

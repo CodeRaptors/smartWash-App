@@ -91,7 +91,7 @@ class Login extends Component {
        <button onClick={this.noAccount} className="btn btn-primary"> crear una cuenta nueva</button>
         <div>
         { this.state.account === undefined ?
-          <p> ¿Tienes cuenta con Smart Wash?</p> :
+          <p> ¿Tienes cuenta con SmartWash?</p> :
           this.state.account ?
           < ExistingLogIn state={this.state} handleChange={this.handleChange} login={this.login}/> :
           <SignUp state={this.state} signup={this.signup} handleChange={this.handleChange} handleUserName={this.handleUserName}/>

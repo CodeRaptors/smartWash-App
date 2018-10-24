@@ -9,11 +9,15 @@ import CheckOut from "./components/checkOut.jsx";
 import MisOrdenes from "./components/pastOrders.jsx";
 import About from "./components/about.jsx";
 import bootstrap from 'bootstrap';
+import Laundry from "./components/laundry.jsx"
 import Calendar from "./calendar.jsx";
 import userHome from './userHome.jsx';
 import Form from "./form.jsx";
+import Contacto from "./components/contacto.jsx";
 import Home from './userHome.jsx';
+import Quienes from './components/Quienes.jsx';
 import $ from 'jquery';
+
 // import Payment from './components/payment.jsx'
 // import Calendar from "./components/calendar.jsx";
 
@@ -175,14 +179,20 @@ class App extends React.Component {
         <div>
         <Navigation />
           <Switch>
-            <Route path="/" component={About} exact />
+            <Route path="/" component={Quienes} exact />s
+
+            <Route path="/contacto" component={Contacto} exact />s
 
             <Route path="/checkout" render={(props) =>
               <CheckOut {...props} state={this.state} addOrder={this.addOrder}
               addOrder={this.addOrder}/> } />
 
+<<<<<<< HEAD
             <Route path="/MisOrdenes" render={(props) =>
               <MisOrdenes {...props} state={this.state}/> } />
+=======
+            <Route path="/MisOrdenes" component={MisOrdenes} />
+>>>>>>> master
 
             <Route path="/registro" render={(props) =>
               <Auth{...props} state={this.state} authListener={this.authListener}/>} />
@@ -197,7 +207,7 @@ class App extends React.Component {
             <Route path='/micuenta' render={(props) =>
             <Home {...props} state={this.state}  getUsersOrders={this.getUsersOrders}
             getUserInfo={this.getUserInfo}/>} />
-
+            <Route path='/AboutUs' component={About} exact/>
           </Switch>
         </div>
       </BrowserRouter>

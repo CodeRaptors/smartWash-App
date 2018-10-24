@@ -4,6 +4,11 @@ import Status from './components/status.jsx'
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import $ from 'jquery';
+<<<<<<< HEAD
+=======
+import MisOrdenes from './components/pastOrders.jsx'
+// import Button from '@material-ui/core/Button';
+>>>>>>> master
 
 class Home extends Component {
     constructor(props) {
@@ -25,9 +30,15 @@ class Home extends Component {
         return (
           <div>
             <img src={"/clothes.png"} />
+<<<<<<< HEAD
             <p> Welcome, {this.props.state.userName}!
             <button onClick={this.logout}><NavLink to ='/'>Logout</NavLink></button>
+=======
+            <p> Bienvenido SmartWasher, {this.props.state.userName}!
+            <Button onClick={this.logout}>Logout</Button>
+>>>>>>> master
             <button><NavLink to='/MisOrdenes'>Mis órdenes</NavLink></button>
+
             </p>
             <div>
             <button><NavLink to='/Form'>¡Ordena Ahora!</NavLink></button>
@@ -35,8 +46,6 @@ class Home extends Component {
             <h2> My laundry status </h2>
             <Status/>
           </div>
-
-
         );
     }
 }

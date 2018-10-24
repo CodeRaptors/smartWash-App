@@ -1,5 +1,12 @@
 
 body {
+<<<<<<< HEAD
+  background-color: white;
+  /* background-color: #7bd0d8; */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+=======
   background-color: #F8F8FF;
   /* background-color: #7bd0d8; */
   background-repeat: no-repeat;
@@ -33,13 +40,14 @@ body {
   .topnav a.active {
     background-color: blue;
     color: #41c7c2;
+>>>>>>> master
   }
 /*
- body {
-   background:
-    url(washer.jpg) bottom center no-repeat,
+  body {
+    background:
+     url(washer.jpg) bottom center no-repeat,
 
- } */
+  } */
 /*
   html {
     background: url(washer.jpg) no-repeat center center fixed;
@@ -49,6 +57,8 @@ body {
     background-size: cover;
   } */
 
+<<<<<<< HEAD
+=======
 
 
   * {
@@ -99,6 +109,7 @@ body {
 
 
 
+>>>>>>> master
   h2{
   color: Black;
   font-family: Arial, Helvetica, sans-serif;
@@ -107,40 +118,44 @@ body {
 }
 
 #main {
- width: 50%;
- margin: auto;
- text-align: center;
+  width: 50%;
+  margin: auto;
+  text-align: center;
 }
 .about{
- font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', cursive;
 }
 
 .pic {
- width: 130%;
- margin: auto;
- text-align: center;
- left: 100%;
- margin-left: -59px;
+  width: 130%;
+  margin: auto;
+  text-align: center;
+  left: 100%;
+  margin-left: -59px;
 }
 h1 {
     font-size: 1.5em;
     color: black;
 }
+<<<<<<< HEAD
+p.oblique {
+=======
 p.oblique
+>>>>>>> master
     font-style: oblique;
 }
 
 #icon{
- width: 20px;
- length: 20px;
+  width: 20px;
+  length: 20px;
 }
 
 .stripe-button{
- margin-top: 20px;
+  margin-top: 20px;
 }
 
 .form{
- background-color: blue;
+  background-color: blue;
 }
 .img {
   width: 100%;

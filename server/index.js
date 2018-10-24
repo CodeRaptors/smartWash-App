@@ -5,9 +5,6 @@ var path = require('path');
 var url = require('url');
 var db = require('../database/data.js');
 var stripe = require("stripe")("pk_test_wd9rThkNdTfjOnS9RXQIFPv6");
-//var nodemailer for email notification
-var nodemailer = require('nodemailer');
-
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,11 +13,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/users', function(req, res){
   let email = req.body.email;
   let userName = req.body.userName;
+  let phone = req.body.phone;
   console.log("hola desdel server");
   if(!email) {
     res.sendStatus(400);
   } else {
-    db.insertUser (email, userName, (err, results) => {
+    db.insertUser (email, userName, phone, (err, results) => {
       if (err) {
         res.status(500);
       } else {
@@ -30,56 +28,37 @@ app.post('/users', function(req, res){
   }
 });
 
-//send email config
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'smartwashapp23@gmail.com',
-    pass: 'holacode2'
-  }
-});
-
-var mailOptions = {
-  from: 'smartwashapp23@gmail.com',
-  to: 'eduardosaavedra1505@gmail.com',
-  subject: 'Order is ready',
-  text: 'Your order is ready you could call and have it delivered or you could pick it up until 6pm'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-
-app.post('/times', function(req, res){
-  let times = req.body.times;
-  if(!times) {
-    res.sendStatus(400);
-  } else {
-    db.insertTime (times, (err, results) => {
-      if (err) {
-        res.status(500);
-      } else {
-        res.status(200).json(results);
-      }
-    });
-  }
-});
+// app.post('/times', function(req, res){
+//   let times = req.body.times;
+//   if(!times) {
+//     res.sendStatus(400);
+//   } else {
+//     db.insertTime (times, (err, results) => {
+//       if (err) {
+//         res.status(500);
+//       } else {
+//         res.status(200).json(results);
+//       }
+//     });
+//   }
+// });
 
 app.post('/order', function(req, res){
-  let name = req.body.name;
-  let phone = req.body.phone;
+  let lat = req.body.lat;
+  let lon = req.body.lon;
+  let userId = req.body.userId;
   let address = req.body.address;
   let size = req.body.size;
-  let specialInd = req.body.specialInd;
+  let specialInd = req.bodyspecialInd;
   let service = req.body.service;
-  if(!name) {
+  let dates = req.body.dates;
+  let times = req.body.times;
+  let total = req.body.total;
+  let status = req.body.status;
+  if(!userId) {
     res.sendStatus(400);
   } else {
-    db.insertOrder (name, phone, address, size, specialInd, service, (err, results) => {
+    db.insertOrder (lat, lon, userId, address, size, specialInd, service, dates, times, total, status, (err, results) => {
       if (err) {
         res.status(500);
       } else {
@@ -137,18 +116,3 @@ app.get('/orders', function (req, res) {
 app.listen(3000, function() {
   console.log('Server started and listening on port 3000');
 });
-
-app.get('/orders',function(req,res){
-  //call get oreders function
-  database.whatever((err, results) => {
-      if(err){
-        res.sendStatus(500)
-      }else{
-        res.status(200).json(results);
-        console.log("hola");
-
-      }
-  })
-});
-
-module.exports = app

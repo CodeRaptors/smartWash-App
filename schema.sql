@@ -6,40 +6,34 @@ USE smartWash;
 
 CREATE TABLE orders(
   id int NOT NULL AUTO_INCREMENT,
-  name varchar(100) NOT NULL,
-  phone int(100) NOT NULL,
+  lat varchar(10) NOT NULL,
+  lon varchar(10) NOT NULL,
+  userId int(10) NOT NULL,
   address varchar(100) NOT NULL,
-  email varchar(50) NOT NULL,
-  phone varchar(10) NOT NULL,
-  pickup varchar(10) NOT NULL,
-
   size varchar(100) NOT NULL,
   specialInd varchar(100) NOT NULL,
   service varchar(100) NOT NULL,
-  PRIMARY KEY (ID)
-
-);
-
-CREATE TABLE schedule(
-  id int NOT NULL AUTO_INCREMENT,
-  times varchar(50) NOT NULL,
+  dates varchar(100) NOT NULL,
+  times varchar(10) NOT NULL,
+  total int(10) NOT NULL,
+  status varchar(20) NOT NULL,
   PRIMARY KEY (ID)
 );
+
+INSERT INTO orders (lat, lon, userId, address, size, specialInd, service, dates, times, total, status)
+VALUES ("55.930", "-3.118", 2, "calle 2 no. 11", "1-3 kg", "suavitel", "Laundry", "10/30/2018", "11:00 a.m.", 50, "entregada" );
 
 CREATE TABLE users(
   id int NOT NULL AUTO_INCREMENT,
-  email varchar (50) NOT NULL,
-  userName varchar (50) NOT NULL,
-  PRIMARY KEY (ID),
-  FOREIGN KEY (email) REFERENCES email(email)
-
+  email varchar(50) NOT NULL,
+  userName varchar(50) NOT NULL,
+  phone varchar(10) NOT NULL,
+  PRIMARY KEY (ID)
 );
 
+
 /*  Execute this file from the command line by typing:
- *    mysql -u root < schema.sql
+ *    mysql -u root -p < schema.sql
  *  to create the database and the tables.*/
 
-
-INSERT INTO orders  (name, lastname, address, email, phone) VALUES("John", "Lopez", "77 toledo", "jolo@gmail.com", "5573589699");
-
- INSERT INTO users (email, userName) VALUES ("anastasio@lelelele.lo", "Anastasio");
+ -- INSERT INTO users (email, userName) VALUES ("anastasio@lelelele.lo", "Anastasio");

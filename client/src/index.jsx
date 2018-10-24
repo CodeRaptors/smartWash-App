@@ -28,35 +28,36 @@ class App extends React.Component {
       lat: '',
       lon: '',
       userId: undefined,
-      userName: undefined,
+      userName: '',
       user: null,
       account: undefined,
-      userOrders: undefined,
+      userOrders: null,
       phone: '',
       address: '',
       size: '1-3 kg',
       specialInd: '',
       service: 'Laundry',
-      //we have 2 times wtf
-      time: '',
       dates: null,
-      times:'',
+      times:'9:00 a.m.',
+      total: 10000,
+      status: 'aceptada',
     }
     this.getUserInfo = this.getUserInfo.bind(this);
     this.getUsersOrders = this.getUsersOrders.bind(this);
     this.authListener = this.authListener.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addOrder = this.addOrder.bind(this);
-    //this.add = this.add.bind(this);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleTime = this.handleTime.bind(this);
 
   }
 
+
   handleDayClick(day, { selected }) {
     this.setState({
       dates: selected ? undefined : day,
     });
+    console.log(typeof day);
   }
 
   handleTime(e) {
@@ -77,6 +78,7 @@ class App extends React.Component {
             this.setState({
               userId: usersInfo.id,
               userName: usersInfo.userName,
+              phone: usersInfo.phone,
             })
           }
 
@@ -96,18 +98,23 @@ class App extends React.Component {
 
 
 
-  addOrder(name, phone, address, size, specialInd, service){
+  addOrder(lat, lon, userId, address, size, specialInd, service, dates, times, total, status){
    $.ajax({
      type: "POST",
      url: "/order",
      contentType: 'application/json',
      data: JSON.stringify({
-       name: name,
-       phone: phone,
+       lat: lat,
+       lon: lon,
+       userId: userId,
        address: address,
        size: size,
        specialInd: specialInd,
-       service: service
+       service: service,
+       dates: dates,
+       times: times,
+       total: total,
+       status: status,
      }),
      success:(data)=> {
      },
@@ -123,28 +130,23 @@ class App extends React.Component {
    method:'GET',
    success: (data) => {
     console.log(data, "awiwi las orders llegaron");
-      const usersOrders = undefined;
+      const usersOrders = [];
     for ( var i = 0; i < data.length; i++){
       if (data[i].userId === this.state.userId){
-        console.log("user's orders found", data[i]);
-        const usersOrders = data[i];
+         usersOrders.push(data[i]);
       }
     }
-    if (usersOrders !== undefined){
+    console.log(usersOrders);
     this.setState({
       userOrders: usersOrders
-    })
-  } else{
-    this.setState({
-      userOrders: "Aún no tienes una orden, ¡Ordena ahora!"
-    })
-  }
+    });
    },
    error:(xhr,err) => {
      console.log('la cagaste desde el fronts orders',err)
    }
-  })
-  }
+ }
+)}
+
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
@@ -159,22 +161,6 @@ class App extends React.Component {
     });
   }
 
-//this function resets the form component back to default values but
-//i dont think well use it anymore
-  // addOrder(event) {
-  //     event.preventDefault();
-  //     this.addOrder(this.state.name, this.state.phone, this.state.address, this.state.size, this.state.specialInd, this.state.service);
-  //     this.setState({
-  //       phone: '',
-  //       address: '',
-  //       size: '',
-  //       specialInd: '',
-  //       service: ''
-  //     })
-  //   }
-
-
-
 
   componentDidMount() {
       navigator.geolocation.getCurrentPosition(location => {
@@ -187,9 +173,6 @@ class App extends React.Component {
       });
    }
 
-  //testing DATABASE
-  
-
   render () {
     return (
       <BrowserRouter>
@@ -201,9 +184,11 @@ class App extends React.Component {
             <Route path="/contacto" component={Contacto} exact />s
 
             <Route path="/checkout" render={(props) =>
-              <CheckOut {...props} state={this.state}/> } />
+              <CheckOut {...props} state={this.state} addOrder={this.addOrder}
+              addOrder={this.addOrder}/> } />
 
-            <Route path="/MisOrdenes" component={MisOrdenes} />
+            <Route path="/MisOrdenes" render={(props) =>
+              <MisOrdenes {...props} state={this.state}/> } />
 
             <Route path="/registro" render={(props) =>
               <Auth{...props} state={this.state} authListener={this.authListener}/>} />

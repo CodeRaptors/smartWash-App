@@ -93,9 +93,6 @@ class Home extends Component {
             <h2> My laundry status </h2>
             <Status/>
           </div>
-
-
-
         );
     }
 }

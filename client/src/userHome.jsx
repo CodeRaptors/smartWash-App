@@ -4,6 +4,7 @@ import Status from './components/status.jsx'
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import $ from 'jquery';
+import MisOrdenes from './components/pastOrders.jsx'
 // import Button from '@material-ui/core/Button';
 
 class Home extends Component {
@@ -84,6 +85,7 @@ class Home extends Component {
             <p> Welcome, {this.props.state.userName}!
             <Button onClick={this.logout}>Logout</Button>
             <button><NavLink to='/MisOrdenes'>Mis órdenes</NavLink></button>
+            
             </p>
             <div>
             <button><NavLink to='/Form'>¡Ordena Ahora!</NavLink></button>

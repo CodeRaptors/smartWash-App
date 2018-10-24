@@ -16,6 +16,7 @@ import Form from "./form.jsx";
 import Contacto from "./components/contacto.jsx";
 import Home from './userHome.jsx';
 import $ from 'jquery';
+
 // import Payment from './components/payment.jsx'
 // import Calendar from "./components/calendar.jsx";
 
@@ -191,12 +192,12 @@ class App extends React.Component {
         <div>
         <Navigation />
           <Switch>
-            <Route path="/" component={About} exact />
+            <Route path="/" component={About} exact />s
 
             <Route path="/checkout" render={(props) =>
               <CheckOut {...props} state={this.state}/> } />
 
-            <Route path="/mis-ordenes" component={MisOrdenes} />
+            <Route path="/MisOrdenes" component={MisOrdenes} />
 
             <Route path="/registro" render={(props) =>
               <Auth{...props} state={this.state} authListener={this.authListener}/>} />

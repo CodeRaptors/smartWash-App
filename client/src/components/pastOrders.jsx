@@ -1,14 +1,16 @@
 import React from 'react';
+import SingleOrder from "./singleOrder.jsx";
 
-
-//página con la información de tus órdenes pasadas
-
-const MisOrdenes = (props) => {
- return (
-   <div>
-     <h2>Tus órdenes pasadas</h2>
+const MisOrdenes = (props) => (
+  <div>
+    { props.userOrders ?
+      <div>
+        {props.userOrders.map((order, id) => (
+          <SingleOrder order={order} key={id}/>
+        ))}
+      </div>
+    : <div>Aún no tienes órdenes con SmartWash</div> }
   </div>
- );
-}
+)
 
 export default MisOrdenes;

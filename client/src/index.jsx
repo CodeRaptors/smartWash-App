@@ -27,7 +27,7 @@ class App extends React.Component {
       userName: '',
       user: null,
       account: undefined,
-      userOrders: undefined,
+      userOrders: null,
       phone: '',
       address: '',
       size: '1-3 kg',
@@ -119,28 +119,23 @@ class App extends React.Component {
    method:'GET',
    success: (data) => {
     console.log(data, "awiwi las orders llegaron");
-      const usersOrders = undefined;
+      const usersOrders = [];
     for ( var i = 0; i < data.length; i++){
       if (data[i].userId === this.state.userId){
-        console.log("user's orders found", data[i]);
-        const usersOrders = data[i];
+         usersOrders.push(data[i]);
       }
     }
-    if (usersOrders !== undefined){
+    console.log(usersOrders);
     this.setState({
       userOrders: usersOrders
-    })
-  } else{
-    this.setState({
-      userOrders: "Aún no tienes una orden, ¡Ordena ahora!"
-    })
-  }
+    });
    },
    error:(xhr,err) => {
      console.log('la cagaste desde el fronts orders',err)
    }
-  })
-  }
+ }
+)}
+
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
@@ -178,7 +173,8 @@ class App extends React.Component {
             <Route path="/checkout" render={(props) =>
               <CheckOut {...props} state={this.state} addOrder={this.addOrder}/> } />
 
-            <Route path="/mis-ordenes" component={MisOrdenes} />
+            <Route path="/MisOrdenes" render={(props) =>
+              <MisOrdenes {...props} state={this.state}/> } />
 
             <Route path="/registro" render={(props) =>
               <Auth{...props} state={this.state} authListener={this.authListener}/>} />

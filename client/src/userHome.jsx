@@ -13,7 +13,7 @@ class Home extends Component {
 
     componentDidMount(){
        this.props.getUserInfo();
-       //this.props.getUsersOrders();
+       this.props.getUsersOrders();
       console.log("component mounted")
     }
 

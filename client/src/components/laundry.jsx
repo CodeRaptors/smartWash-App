@@ -10,7 +10,7 @@ class Laundry extends React.Component {
   render () {
     return (
       <div>
-      <h1> SmartWash </h1>
+      <font className="text1" size="6" color="blue">&#9885; SmartWash</font>
       <h1>Recogida sucia. Entregada Fresca y Doblada.</h1>
       <img className="img0" src="washer.jpg"/>
       </div>

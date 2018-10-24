@@ -15,6 +15,7 @@ import userHome from './userHome.jsx';
 import Form from "./form.jsx";
 import Contacto from "./components/contacto.jsx";
 import Home from './userHome.jsx';
+import Quienes from './components/Quienes.jsx';
 import $ from 'jquery';
 
 // import Payment from './components/payment.jsx'
@@ -192,7 +193,9 @@ class App extends React.Component {
         <div>
         <Navigation />
           <Switch>
-            <Route path="/" component={About} exact />s
+            <Route path="/" component={Quienes} exact />s
+
+            <Route path="/contacto" component={Contacto} exact />s
 
             <Route path="/checkout" render={(props) =>
               <CheckOut {...props} state={this.state}/> } />
@@ -212,7 +215,7 @@ class App extends React.Component {
             <Route path='/micuenta' render={(props) =>
             <Home {...props} state={this.state}  getUsersOrders={this.getUsersOrders}
             getUserInfo={this.getUserInfo}/>} />
-
+            <Route path='/AboutUs' component={About} exact/>
           </Switch>
         </div>
       </BrowserRouter>

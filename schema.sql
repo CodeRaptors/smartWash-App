@@ -16,11 +16,12 @@ CREATE TABLE orders(
   dates varchar(100) NOT NULL,
   times varchar(10) NOT NULL,
   total int(10) NOT NULL,
+  status varchar(20) NOT NULL,
   PRIMARY KEY (ID)
 );
 
-INSERT INTO orders (lat, lon, userId, address, size, specialInd, service, dates, times, total)
-VALUES ("55.930", "-3.118", 2, "calle 2 no. 11", "1-3 kg", "suavitel", "Laundry", "Wed Oct 24 2018 12:00:00 GMT-0500 (Central Daylight Time)", "11:00 a.m.", 50 );
+INSERT INTO orders (lat, lon, userId, address, size, specialInd, service, dates, times, total, status)
+VALUES ("55.930", "-3.118", 2, "calle 2 no. 11", "1-3 kg", "suavitel", "Laundry", "10/30/2018", "11:00 a.m.", 50, "entregada" );
 
 CREATE TABLE users(
   id int NOT NULL AUTO_INCREMENT,

@@ -35,7 +35,8 @@ class App extends React.Component {
       service: 'Laundry',
       dates: null,
       times:'9:00 a.m.',
-      total: 0,
+      total: 10000,
+      status: 'aceptada',
     }
     this.getUserInfo = this.getUserInfo.bind(this);
     this.getUsersOrders = this.getUsersOrders.bind(this);
@@ -73,6 +74,7 @@ class App extends React.Component {
             this.setState({
               userId: usersInfo.id,
               userName: usersInfo.userName,
+              phone: usersInfo.phone,
             })
           }
 
@@ -92,18 +94,23 @@ class App extends React.Component {
 
 
 
-  addOrder(name, phone, address, size, specialInd, service){
+  addOrder(lat, lon, userId, address, size, specialInd, service, dates, times, total, status){
    $.ajax({
      type: "POST",
      url: "/order",
      contentType: 'application/json',
      data: JSON.stringify({
-       name: name,
-       phone: phone,
+       lat: lat,
+       lon: lon,
+       userId: userId,
        address: address,
        size: size,
        specialInd: specialInd,
-       service: service
+       service: service,
+       dates: dates,
+       times: times,
+       total: total,
+       status: status,
      }),
      success:(data)=> {
      },
@@ -171,7 +178,8 @@ class App extends React.Component {
             <Route path="/" component={About} exact />
 
             <Route path="/checkout" render={(props) =>
-              <CheckOut {...props} state={this.state} addOrder={this.addOrder}/> } />
+              <CheckOut {...props} state={this.state} addOrder={this.addOrder}
+              addOrder={this.addOrder}/> } />
 
             <Route path="/MisOrdenes" render={(props) =>
               <MisOrdenes {...props} state={this.state}/> } />

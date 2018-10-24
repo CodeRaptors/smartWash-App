@@ -51,6 +51,7 @@ onToken(token){
         data-description="Widget"
         data-image= {'/clothes.png'}
         data-locale="auto"
+        onClick={this.props.addOrder}
         >
       </script>
     </form>

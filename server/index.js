@@ -28,32 +28,37 @@ app.post('/users', function(req, res){
   }
 });
 
-app.post('/times', function(req, res){
-  let times = req.body.times;
-  if(!times) {
-    res.sendStatus(400);
-  } else {
-    db.insertTime (times, (err, results) => {
-      if (err) {
-        res.status(500);
-      } else {
-        res.status(200).json(results);
-      }
-    });
-  }
-});
+// app.post('/times', function(req, res){
+//   let times = req.body.times;
+//   if(!times) {
+//     res.sendStatus(400);
+//   } else {
+//     db.insertTime (times, (err, results) => {
+//       if (err) {
+//         res.status(500);
+//       } else {
+//         res.status(200).json(results);
+//       }
+//     });
+//   }
+// });
 
 app.post('/order', function(req, res){
-  let name = req.body.name;
-  let phone = req.body.phone;
+  let lat = req.body.lat;
+  let lon = req.body.lon;
+  let userId = req.body.userId;
   let address = req.body.address;
   let size = req.body.size;
-  let specialInd = req.body.specialInd;
+  let specialInd = req.bodyspecialInd;
   let service = req.body.service;
-  if(!name) {
+  let dates = req.body.dates;
+  let times = req.body.times;
+  let total = req.body.total;
+  let status = req.body.status;
+  if(!userId) {
     res.sendStatus(400);
   } else {
-    db.insertOrder (name, phone, address, size, specialInd, service, (err, results) => {
+    db.insertOrder (lat, lon, userId, address, size, specialInd, service, dates, times, total, status, (err, results) => {
       if (err) {
         res.status(500);
       } else {

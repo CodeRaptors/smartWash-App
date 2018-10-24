@@ -25,25 +25,25 @@ const insertUser = function(email, userName, phone, callback) {
   );
 };
 
-const insertTime = function(times, callback) {
-  connection.query(
-    'INSERT INTO schedule (times) VALUES (?)',
-    [times],
-    (err, results, fields) => {
-      if (err) {
-        callback(err, null);
-        console.log(err);
-      } else {
-        callback(null, results);
-      }
-    }
-  );
-};
+// const insertTime = function(times, callback) {
+//   connection.query(
+//     'INSERT INTO schedule (times) VALUES (?)',
+//     [times],
+//     (err, results, fields) => {
+//       if (err) {
+//         callback(err, null);
+//         console.log(err);
+//       } else {
+//         callback(null, results);
+//       }
+//     }
+//   );
+// };
 
-var insertOrder= function (name, phone, address, size, specialInd, service, callback) {
+var insertOrder= function (lat, lon, userId, address, size, specialInd, service, dates, times, total, status, callback) {
   connection.query(
-    'INSERT INTO orders (name, phone, address, size, specialInd, service) VALUES (?,?,?,?,?,?)',
-  [name, phone, address, size, specialInd, service],   (err, results, fields) => {
+    'INSERT INTO orders (lat, lon, userId, address, size, specialInd, service, dates, times, total, status) VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+  [lat, lon, userId, address, size, specialInd, service, dates, times, total, status],   (err, results, fields) => {
       if (err) {
         callback(err, null);
         console.log(err);
@@ -77,5 +77,5 @@ var selectOrders = function(callback) {
 module.exports.selectOrders = selectOrders;
 module.exports.insertUser = insertUser;
 module.exports.selectUsers = selectUsers;
-module.exports.insertTime = insertTime;
+//module.exports.insertTime = insertTime;
 module.exports.insertOrder = insertOrder;

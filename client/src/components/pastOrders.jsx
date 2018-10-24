@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import SingleOrder from "./singleOrder.jsx";
 
@@ -13,28 +12,6 @@ const MisOrdenes = (props) => (
     : <div>Aún no tienes órdenes con SmartWash</div> }
   </div>
 )
-=======
-
-import React from "react";
-
-
-class MisOrdenes extends React.Component{
- constructor(props){
-   super(props);
-   this.state={
-     value1:""
-   };
- }
- render(){
-   return(
-     <div >
-       
-       <p>HELLO</p>
-     </div>
-   );
- }
-}
->>>>>>> master
 
 export default MisOrdenes;
 

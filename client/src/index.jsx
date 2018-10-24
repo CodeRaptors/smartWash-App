@@ -187,12 +187,8 @@ class App extends React.Component {
               <CheckOut {...props} state={this.state} addOrder={this.addOrder}
               addOrder={this.addOrder}/> } />
 
-<<<<<<< HEAD
             <Route path="/MisOrdenes" render={(props) =>
               <MisOrdenes {...props} state={this.state}/> } />
-=======
-            <Route path="/MisOrdenes" component={MisOrdenes} />
->>>>>>> master
 
             <Route path="/registro" render={(props) =>
               <Auth{...props} state={this.state} authListener={this.authListener}/>} />

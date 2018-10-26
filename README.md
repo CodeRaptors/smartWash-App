@@ -3,13 +3,6 @@
 # Description
 Smart wash app allows to the users to send their clothes to an laundry mat, and a delivery guy is gonna pick the clothes and take it back home.
 
-# Advanced Requirements 
-Do these if you have completed the basics and have ample time to spare based on the assigned due date
-1. Ability to click on any grocery item and see a strike through of that item (as in its being checked off the list)
-2. When a new grocery item is added then any striked-through items disappear from the page/list completely
-3. Add a grocery name and quantity header and add the ability to sort by grocery item name or quantity
-
-
 # Instructions
 1. Perform a Git Fork on the repository
 2. Perform a Git Clone from your Github Repo to create a local clone of the project
